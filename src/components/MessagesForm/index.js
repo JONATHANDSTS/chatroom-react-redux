@@ -4,7 +4,7 @@ import './style.scss';
 
 const MessageForm = () => (
   <form className="message-form">
-    <input type="text" placeholder="saisissez un message" />
+    <input className="form-input" type="text" placeholder="saisissez un message" />
   </form>
 );
 
