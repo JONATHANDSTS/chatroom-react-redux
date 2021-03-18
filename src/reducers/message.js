@@ -1,3 +1,5 @@
+import { INPUT_CHANGE } from '../actions/messagesAction';
+
 const stateInitial = {
   list: [
     {
@@ -16,11 +18,16 @@ const stateInitial = {
       content: 'mais quelle truffe',
     },
   ],
-  messageText: 'je suis en cours decriture',
+  messageText: 'je suis en cours decriture...',
 };
 
 const reducerMessage = (state = stateInitial, action = {}) => {
   switch (action.type) {
+    case INPUT_CHANGE:
+      return {
+        ...state,
+        messageText: action.text,
+      };
     default:
       return state;
   }
