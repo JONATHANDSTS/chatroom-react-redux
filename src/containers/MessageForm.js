@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MessageForm from '../components/MessagesForm';
-import { inputChange } from '../actions/messagesAction';
+import { inputChange, messageSbumit } from '../actions/messagesAction';
 
 const mapStateToProps = (state) => ({
   message: state.messages.messageText,
@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(inputChange(textSaisi));
   },
   onMessageSubmit: () => {
-    console.log('le message doit etre envoye');
+    dispatch(messageSbumit());
   },
 });
 

@@ -1,4 +1,4 @@
-import { INPUT_CHANGE } from '../actions/messagesAction';
+import { INPUT_CHANGE, MESSAGE_SUBMIT } from '../actions/messagesAction';
 
 const stateInitial = {
   list: [
@@ -27,6 +27,20 @@ const reducerMessage = (state = stateInitial, action = {}) => {
       return {
         ...state,
         messageText: action.text,
+      };
+    case MESSAGE_SUBMIT:
+
+      return {
+        ...state,
+        list: [
+          ...state.list,
+          {
+            id: '5',
+            author: 'lancelot',
+            content: state.messageText,
+          },
+        ],
+
       };
     default:
       return state;
