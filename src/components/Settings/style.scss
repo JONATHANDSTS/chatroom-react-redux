@@ -1,0 +1,49 @@
+.settings {
+  display: flex;
+  position: fixed;
+  top: 20px;
+  right: -180px;
+  width: 250px;
+
+  &.opened {
+    right: 20px;
+  }
+}
+
+.settings-zone {
+  padding: 10px;
+  input {
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+}
+
+.submit-button {
+  background-color: #531aff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+}
+
+.toggle-button {
+  color: #935fff;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #bbb;
+  font-size: 2em;
+  font-weight: bold;
+
+  &.opened {
+    transform: rotate(45deg);
+  }
+}
