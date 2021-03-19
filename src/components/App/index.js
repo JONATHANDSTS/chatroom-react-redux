@@ -4,18 +4,12 @@ import './styles.css';
 // == Import
 import MessagesForm from 'src/containers/MessageForm';
 import MessagesList from 'src/containers/MessagesList';
-import Settings from 'src/components/Settings';
+import Settings from 'src/containers/Settings';
 
 // == Composant
 const App = () => (
   <div className="app">
-    <Settings
-      opened
-      formData={{ email: 'hey', password: 'qwert' }}
-      onInPutChange={() => {}}
-      onFormChange={() => {}}
-      onToggle={() => {}}
-    />
+    <Settings />
     <MessagesList />
     <MessagesForm />
 

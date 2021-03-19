@@ -11,9 +11,6 @@ const Settings = ({
 }) => {
   const handleInPutChange = (evt) => {
     const { name, value } = evt.target;
-    console.log({
-      [name]: value,
-    });
     onInPutChange({
       [name]: value,
     });
