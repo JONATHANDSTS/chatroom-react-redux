@@ -1,22 +1,21 @@
 import { connect } from 'react-redux';
 import Settings from '../components/Settings';
-import { loginInputChange } from '../actions/user';
+import { loginInputChange, toggleLoginForm, loginSubmit } from '../actions/user';
 
 const mapState = (state) => ({
-  opened: true,
+  opened: state.user.opened,
   formData: state.user.formData,
 });
 
 const mapDispatch = (dispatch) => ({
   onInPutChange: (ceQuiAEteTape) => {
-    console.log(ceQuiAEteTape);
     dispatch(loginInputChange(ceQuiAEteTape));
   },
   onFormSubmit: () => {
-    console.log('submit reducer');
+    dispatch(loginSubmit());
   },
   onToggle: () => {
-    console.log('toggle depuis reducer');
+    dispatch(toggleLoginForm());
   },
 });
 

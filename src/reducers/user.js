@@ -1,4 +1,4 @@
-import { LOGIN_INPUT_CHANGE } from '../actions/user';
+import { LOGIN_INPUT_CHANGE, TOGGLE_LOGIN_FORM, LOGIN_SUBMIT } from '../actions/user';
 
 const initialState = {
   opened: true,
@@ -10,6 +10,20 @@ const initialState = {
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
+    case LOGIN_SUBMIT:
+      return {
+        ...state,
+        opened: false,
+        formData: {
+          email: '',
+          password: '',
+        },
+      };
+    case TOGGLE_LOGIN_FORM:
+      return {
+        ...state,
+        opened: !state.opened,
+      };
     case LOGIN_INPUT_CHANGE:
       return {
         ...state,
