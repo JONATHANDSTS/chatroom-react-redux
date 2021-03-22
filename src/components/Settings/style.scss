@@ -1,10 +1,12 @@
+$transitionDuration: 1s;
+
 .settings {
   display: flex;
   position: fixed;
   top: 20px;
   right: -180px;
   width: 250px;
-
+  transition: right $transitionDuration ease;
   &.opened {
     right: 20px;
   }
@@ -42,8 +44,9 @@
   border: 1px solid #bbb;
   font-size: 2em;
   font-weight: bold;
-
+  transform: rotate(0);
+  transition: transform ease $transitionDuration;
   &.opened {
-    transform: rotate(45deg);
+    transform: rotate(-225deg);
   }
 }

@@ -1,10 +1,18 @@
-import { LOGIN_INPUT_CHANGE, TOGGLE_LOGIN_FORM, LOGIN_SUBMIT } from '../actions/user';
+import {
+  LOGIN_INPUT_CHANGE,
+  TOGGLE_LOGIN_FORM,
+  LOGIN_SUBMIT,
+  LOGIN_SUCCES,
+  LOGIN_ERROR,
+} from '../actions/user';
 
 const initialState = {
   opened: true,
+  loading: false,
+  user: {},
   formData: {
-    email: 'test@gmail.com',
-    password: '123',
+    email: 'acidman@herocorp.io',
+    password: 'fructis',
   },
 };
 
@@ -14,10 +22,23 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         opened: false,
-        formData: {
-          email: '',
-          password: '',
+        loading: true,
+      };
+    case LOGIN_SUCCES:
+      return {
+        ...state,
+        loading: false,
+        formData: { email: '', password: '' },
+        user: {
+          ...action.payload,
         },
+      };
+    case LOGIN_ERROR:
+      return {
+        ...state,
+        loading: false,
+        user: {},
+        opened: true,
       };
     case TOGGLE_LOGIN_FORM:
       return {
