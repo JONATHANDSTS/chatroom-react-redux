@@ -3,7 +3,9 @@ import MessageForm from '../components/MessagesForm';
 import { inputChange, messageSbumit } from '../actions/messagesAction';
 
 const mapStateToProps = (state) => ({
-  message: state.messages.messageText,
+  messageText: state.messages.messageText,
+  loading: state.user.loading,
+  user: state.user.user,
 });
 
 const mapDispatchToProps = (dispatch) => ({

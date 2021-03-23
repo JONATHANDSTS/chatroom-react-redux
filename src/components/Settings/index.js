@@ -8,6 +8,7 @@ const Settings = ({
   onToggle,
   onInPutChange,
   onFormSubmit,
+  loading,
 }) => {
   const handleInPutChange = (evt) => {
     const { name, value } = evt.target;
@@ -15,6 +16,7 @@ const Settings = ({
       [name]: value,
     });
   };
+
 
   return (
     <div className={opened ? 'settings opened' : 'settings'}>
@@ -35,6 +37,7 @@ const Settings = ({
         }}
       >
         <input
+          disabled={loading}
           name="email"
           type="email"
           placeholder="email"
@@ -42,6 +45,7 @@ const Settings = ({
           onChange={handleInPutChange}
         />
         <input
+          disabled={loading}
           name="password"
           type="password"
           placeholder="password"
@@ -63,6 +67,10 @@ Settings.propTypes = {
   onToggle: PropTypes.func.isRequired,
   onInPutChange: PropTypes.func.isRequired,
   onFormSubmit: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  user: PropTypes.shape({
+    pseudo: PropTypes.string,
+  }).isRequired,
 
 };
 
